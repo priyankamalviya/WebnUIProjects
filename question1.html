@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv='cache-control' content='no cache'>
+		<meta http-equiv='pragma' content='no-cache'>
+		<meta http-equiv='expires' content='0'>
+
+		<link href="styles.css" rel="stylesheet">
+		<title>Question 1</title>
+	</head>
+	<body class="question-page">
+		<header><h1>CMPE280 Quiz</h1></header>
+		<div class="container question-1">
+			<div class="box quiz-box">
+				<div class="title-container"><h3>Question 1</h3></div>
+
+				<div class="quiz-container">
+					 <form action="question2.html" method="GET">
+					<div class="left-side" >
+
+                    	<span class="question">Given points (x1,y1) and (x2,y2) select the formula to find the equation of the line.</span>
+                      
+                    	<div class="options">
+                    		<div class="option">
+                    			<label>
+                    				<input type="radio" id="1a" name="math1" value="incorrect" unchecked>
+                    				<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>y</mi><mo>&#160;</mo><mo>=</mo><mo>&#160;</mo><mo>&#160;</mo><mi>m</mi><mi>x</mi><mo>&#160;</mo><mo>+</mo><mo>&#160;</mo><mi>c</mi></math>
+                    			</label>
+                    		</div>
+
+
+							<div class="option">
+								<label>
+								   	<input type="radio" id= "1b" name="math1" value="incorrect" unchecked>
+								   	<math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mfenced><mrow><mi>x</mi><mo>&#160;</mo><mo>-</mo><mo>&#160;</mo><mi>h</mi></mrow></mfenced><mn>2</mn></msup><mo>&#160;</mo><mo>+</mo><mo>&#160;</mo><msup><mfenced><mrow><mi>y</mi><mo>&#160;</mo><mo>-</mo><mo>&#160;</mo><mi>k</mi></mrow></mfenced><mn>2</mn></msup><mo>=</mo><mo>&#160;</mo><msup><mi>r</mi><mn>2</mn></msup><mspace linebreak="newline"/></math>
+
+								</label>
+							 </div>
+                            
+							<div class="option">
+							   	<label>
+							     	<input type="radio" id="1c" name="math1" value="incorrect" unchecked>
+							     	<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>y</mi><mo>&#160;</mo><mo>-</mo><mo>&#160;</mo><msub><mi>y</mi><mn>1</mn></msub><mo>=</mo><mo>&#160;</mo><mi>m</mi><mfenced><mrow><mi>x</mi><mo>&#160;</mo><mo>-</mo><mo>&#160;</mo><msub><mi>x</mi><mn>1</mn></msub></mrow></mfenced><mspace linebreak="newline"/></math>
+							     </label>
+							</div>
+							<div class="option">
+							   <label>
+							      <input type="radio" id="1d" name="math1" value="correct" unchecked>
+							      <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>y</mi><mo>&#160;</mo><mo>-</mo><mo>&#160;</mo><msub><mi>y</mi><mn>2</mn></msub><mo>=</mo><mo>&#160;</mo><mfrac bevelled="true"><mfenced><mrow><msub><mi>y</mi><mn>2</mn></msub><mo>&#160;</mo><mo>-</mo><mo>&#160;</mo><msub><mi>y</mi><mn>1</mn></msub></mrow></mfenced><mfenced><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>&#160;</mo><mo>-</mo><mo>&#160;</mo><msub><mi>x</mi><mn>1</mn></msub></mrow></mfenced></mfrac><mfenced><mrow><mi>x</mi><mo>-</mo><mo>&#160;</mo><msub><mi>x</mi><mn>2</mn></msub></mrow></mfenced></math>
+							   </label>
+							 </div>
+                             
+                    		</div>	
+                    	</div>
+
+					<div class="right-side">
+						<!--<canvas id="graph" width="200" height="200" class="question1-canvas">-->
+							<svg height="200" width="500">
+<line x1="0" y1="200" x2="200" y2="200" stroke="#000" stroke-width="2" />
+<line x1="0" y1="200" x2="0" y2="0" stroke="#000" stroke-width="2" />
+<line x1="0" y1="200" x2="150" y2="20" stroke="#000" stroke-width="1" marker-end="url(#arrow)"  />
+
+ <defs>
+    <marker id="arrow" markerWidth="15" markerHeight="15" refx="0" refy="0" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,7 L11,3 z" fill="#000" />
+</defs>
+
+  <circle cx="120" cy="57" r="4" stroke="black" stroke-width="1" fill="red" />
+  Sorry, your browser does not support inline SVG.  
+
+
+  <circle cx="76" cy="107" r="4" stroke="black" stroke-width="1" fill="red" />
+  Sorry, your browser does not support inline SVG.  
+</svg>
+							
+						<!--</canvas>-->
+					</div>
+
+					<div class="container-button">
+						<input type="submit" class="next" value="submit and next question">
+						<input type="clear" class="previous" value="clear">
+					 </div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

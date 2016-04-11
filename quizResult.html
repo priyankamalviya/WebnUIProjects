@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="HTML5 HW1">
+  <meta name="Priyanka Malviya">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+	<link href="styles.css" rel="stylesheet" type="text/css">
+	<title>CMPE280 Quiz </title>
+	
+</head>
+<body class="question-page">
+		<header><h1>CMPE280 Quiz</h1></header>
+		<div class="container question-1">
+			<div class="box quiz-box">
+				<div class="title-container"><h3>Score Card</h3></div>
+			
+			    <div class="quiz-container">
+					<fieldset class="result">
+						<details>
+						  <summary>Quantitative Section</summary>
+						  <p><strong>Number of Questions Answered:<label id="q1">0</label> </strong> <span class="score" id="qt-answered"></span> </p>
+						  <p><strong>Number of Correct Answer: <label id="q2">0</label></strong> <span class="score" id="qt-correct"></span> </p>
+						  <p><strong>Score:<label id="q3">0</label> </strong> <span id="qt-score"></span></p>
+						</details>
+
+						<details>
+						  <summary>Reading Section</summary>
+						  
+						  <p><strong>Number of Questions Answered:<label id="e1">0</label> </strong> <span class="score" id="rd-answered"></span> </p>
+						  <p><strong>Number of Correct Answer:<label id="e2">0</label> </strong> <span class="score" id="rd-correct"></span> </p>
+						  <p><strong>Score: <label id="e3">0</label></strong> <span id="rd-score"></span></p>
+						  
+						</details>
+
+						<details>
+						  <summary>Audio/Video Section</summary>
+						  
+						  <p><strong>Number of Questions Answered:<label id="v1">0</label> </strong> <span class="score" id="av-answered"></span> </p>
+						  <p><strong>Number of Correct Answer:<label id="v2">0</label> </strong> <span class="score" id="av-correct"></span> </p>
+						  <p><strong>Score: <label id="v3">0</label></strong> <span id="av-score"></span></p>
+						  
+						</details>
+                         </Fieldset>
+						<div class="container-button">
+							<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thank You!!</h3>
+						<button type="button" onclick="submitQ(1)" class="next"><h3>Finish</h3></button>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<script>
+     	
+     		 var queryString = window.location.search;
+             console.log(queryString);
+             queryString=queryString.substring(1);
+             console.log(queryString);
+
+
+              var arrayAndSplit = queryString.split('&');
+              console.log(arrayAndSplit);
+
+                 for(var i=0;i<arrayAndSplit.length;i++){
+                    var arrayEqSplit= arrayAndSplit[i].split('=');
+                    console.log(arrayEqSplit);
+                     if(i==0){
+                      var totalQuantAnswered=arrayEqSplit[1];
+                        console.log(totalQuantAnswered);
+                                }
+                    else if(i==1){
+                       var totalQuantCorrect=arrayEqSplit[1];
+                       console.log(totalQuantCorrect);
+                                }
+                    else if(i==2){
+                        var totalQuantScore=arrayEqSplit[1];
+                         console.log(totalQuantScore);
+                                }
+                   	else if(i==4){
+                      var totalEnglishAnswered=arrayEqSplit[1];
+                        console.log(totalEnglishAnswered);
+                                }
+                    else if(i==5){
+                       var totalEnglishCorrect=arrayEqSplit[1];
+                       console.log(totalEnglishCorrect);
+                                }
+                    else if(i==6){
+                        var totalEnglishScore=arrayEqSplit[1];
+                         console.log(totalEnglishScore);
+                                }
+                    else if(i==8){
+                      var totalVideoAnswered=arrayEqSplit[1];
+                        console.log(totalVideoAnswered);
+                                }
+                    else if(i==9){
+                      var totalVideoCorrect=arrayEqSplit[1];
+                        console.log(totalVideoCorrect);
+                                }
+                    else if(i==10){
+                      var totalVideoScore=arrayEqSplit[1];
+                        console.log(totalVideoScore);
+                                }
+
+                         }
+
+		document.getElementById("q1").innerHTML=totalQuantAnswered;
+               document.getElementById("q2").innerHTML=totalQuantCorrect;
+	        document.getElementById("q3").innerHTML=totalQuantScore;
+
+		document.getElementById("e1").innerHTML=totalEnglishAnswered;
+		document.getElementById("e2").innerHTML=totalEnglishCorrect;
+		document.getElementById("e3").innerHTML=totalEnglishScore;
+
+		document.getElementById("v1").innerHTML=totalVideoAnswered;
+		document.getElementById("v2").innerHTML=totalVideoCorrect;
+		document.getElementById("v3").innerHTML=totalVideoScore;
+
+			
+     </script>
+	</body>
+	</html>

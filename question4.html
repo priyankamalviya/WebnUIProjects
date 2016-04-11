@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv='cache-control' content='no cache'>
+		<meta http-equiv='pragma' content='no-cache'>
+		<meta http-equiv='expires' content='0'>
+
+		<link href="styles.css" rel="stylesheet">
+		<title>Question 4</title>
+		<script>
+		function load(){
+	            var queryString = window.location.search;
+        		console.log(queryString);
+        		queryString=queryString.substring(1);
+        		console.log(queryString);
+			    var totalEnglishAnswered = 0;
+        		var totalEnglishCorrect = 0;
+        		var totalEnglishScore = 0;
+        		if(queryString!=null){
+
+                 totalEnglishAnswered=+totalEnglishAnswered+1;
+                 var choice= queryString.split("=");
+
+                 console.log(choice[4]);
+                 if(choice[4]==="correct")
+                 {
+                 	totalEnglishCorrect=+totalEnglishCorrect+1;
+                 	totalEnglishScore=+totalEnglishScore+50;
+                 	console.log(totalEnglishCorrect);
+                 	console.log(totalEnglishScore);
+                 }
+                else{
+               		totalEnglishCorrect=+totalEnglishCorrect +0;
+               		totalEnglishScore=+totalEnglishScore + 0;
+                }
+
+        		}
+
+            var radios=document.getElementsByName("video");
+				var answer = "";
+				for (var i=0,length=radios.length; i < length; i++) {
+					if (radios[i].checked) {
+						answer=radios[i].value;
+						console.log(answer);
+						break;
+					}
+				}
+
+		      var originalurl=window.location.hostname + window.location.pathname;
+              //console.log(queryString);
+              var url = originalurl.substring(0,originalurl.length-15)+"/quizSurvey.html";
+        	  url=url+'?'+queryString+'&totalEnglishAnswered='+totalEnglishAnswered+ '&totalEnglishCorrect='+totalEnglishCorrect+'&totalEnglishScore='+totalEnglishScore+'&videoans='+answer;
+        	  console.log(url);
+        	  document['questionform'].action = url;
+        	  document.getElementById('questionform').submit(); 
+        	}
+</script>
+	</head>
+	<body class="question-page">
+		<header><h1>CMPE280 Quiz</h1></header>
+		<div class="container question-1">
+			<div class="box quiz-box">
+				<div class="title-container"><h3>Question 4</h3></div>
+
+				<div class="quiz-container">
+					<form action="/" method="post" name="questionform" id="questionform">
+					<div class="left-side" >
+                    	<span class="question">Watch the video and answer the following question.
+							What is the source as mentioned in the video?</span>
+                      
+                    	<div class="options">
+                    		<div class="option">
+                    			<label>
+                    				<input type="radio" id="4a" name="video" value="incorrect" unchecked>
+										  		Nasa.Gov
+                    			</label>
+                    		</div>
+                   		<div class="option">
+								<label>
+								   <input type="radio" id="4b" name="video" value="incorrect" unchecked>
+										    	Data.gov
+
+								</label>
+							 </div>
+                            
+						<div class="option">
+							   	<label>
+							     	<input type="radio" id="4c" name="video" value="correct" unchecked>
+										      	Facebook
+							     </label>
+							</div>
+							<div class="option">
+							   <label>
+							      <input type="radio" id="4d" name="video" value="incorrect" unchecked>
+							      <p>ab.xy</p>
+							   </label>
+							 </div>
+
+                    		</div>
+                    		
+                    	</div>
+
+					
+
+					<div class="right-side">
+					<video controls="controls" poster="http://www.html5videoplayer.net/poster/toystory.jpg" width="100%" height="100%"><source src="http://www.html5videoplayer.net/videos/toystory.mp4" type="video/mp4"><img alt="HTML5 MP4/H.264 Video" src="http://www.html5videoplayer.net/poster/toystory.jpg" width="640" height="360" title="No video playback capabilities, please download the video below" name="video"></video>
+
+					</div>
+					<div class="container-button">
+					<input type="button" class="next" onclick="load()" value="submit and next question">
+					<input type="clear" class="previous" value="clear">
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

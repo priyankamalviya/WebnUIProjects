@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv='cache-control' content='no cache'>
+		<meta http-equiv='pragma' content='no-cache'>
+		<meta http-equiv='expires' content='0'>
+
+		<link href="styles.css" rel="stylesheet">
+		<title>Question 3</title>
+<script>
+function replace1(val){
+  var el = document.getElementById(val).value;
+  document.getElementById('opt1').innerHTML="$"+el;
+ 
+}
+
+function replace2(val){
+  var el = document.getElementById(val).value;
+  document.getElementById('opt2').innerHTML=el;
+ 
+}
+function clrblk(){
+  document.getElementById("opt1").innerHTML='$_____';
+  document.getElementById("opt2").innerHTML='_____';
+}
+
+function load(){
+        		var queryString = window.location.search;
+        		console.log(queryString);
+        		queryString=queryString.substring(1);
+        		console.log(queryString);
+
+        		 var arrayAndSplit = queryString.split('&');
+        		 console.log(arrayAndSplit);
+
+        		 for(var i=0;i<arrayAndSplit.length;i++){
+        		 	var arrayEqSplit= arrayAndSplit[i].split('=');
+        		 	console.log(arrayEqSplit);
+        		 	if(i==0){
+        		 		var totalQuantAnswered=arrayEqSplit[1];
+        		 		console.log(totalQuantAnswered);
+        		 	}
+        		 	else if(i==1){
+                       var totalQuantCorrect=arrayEqSplit[1];
+                       console.log(totalQuantCorrect);
+        		 	}
+        		 	else if(i==2){
+        		 		var totalQuantScore=arrayEqSplit[1];
+        		 		console.log(totalQuantScore);
+        		 	}
+                   else{
+                   	var readMath2 = arrayEqSplit[1];
+                   	console.log(readMath2);
+                   }
+        		 }
+        		 
+        		if(arrayAndSplit[3]!=null){
+                  console.log("bullshit");
+                 totalQuantAnswered= +totalQuantAnswered + 1; 
+                 console.log(totalQuantAnswered);
+                 console.log(readMath2);
+                 if(readMath2==="correct")
+                 {
+                 	totalQuantCorrect= +totalQuantCorrect + 1;
+                 	totalQuantScore= +totalQuantScore + 50;
+                 	console.log(totalQuantCorrect);
+                 }
+                else{
+               		totalQuantCorrect=+totalQuantCorrect +0;
+               		totalQuantScore=+totalQuantScore + 0;
+                }
+            }
+                
+
+        		
+            var radios1=document.getElementsByName("english1");
+				var answer1 = "";
+				var perfectanswer1="incorrect";
+				for (var i=0,length=radios1.length; i < length; i++) {
+					if (radios1[i].checked) {
+						answer1=radios1[i].value;
+							if(answer1==="650"){
+								perfectanswer1="correct";
+							}
+						break;
+					}
+                  
+				}
+          var radios2=document.getElementsByName("english2");
+				var answer2 = "";
+				var perfectanswer2="incorrect";
+				for (var i=0,length=radios2.length; i < length; i++) {
+					if (radios2[i].checked) {
+						answer2=radios2[i].value;
+							if(answer2==="Twitter"){
+								perfectanswer2="correct";
+							}
+						break;
+					}
+                  
+				}
+
+				var finalans="incorrect";
+
+				if(perfectanswer1==="correct" && perfectanswer2==="correct"){
+					 finalans="correct";
+				}
+
+              var originalurl=window.location.hostname + window.location.pathname;
+              console.log(originalurl);
+              var url = originalurl.substring(0,originalurl.length-6)+"4.html";
+        	  url=url+'?totalQuantAnswered='+totalQuantAnswered+ '&totalQuantCorrect='+totalQuantCorrect+'&totalQuantScore='+totalQuantScore+'&finalans='+finalans;
+        	  console.log(url);
+        	  document['questionform'].action = url;
+        	  document.getElementById('questionform').submit();
+        	  
+        	}
+
+</script>
+	</head>
+	<body class="question-page">
+		<header><h1>CMPE280 Quiz</h1></header>
+		<div class="container question-1">
+			<div class="box quiz-box">
+				<div class="title-container"><h3>Question 3</h3></div>
+
+				<div class="quiz-container">
+					<form action="/" method="post" id="questionform" name="questionform">
+					<div class="left-side" >
+                    	<span class="question">As per the latest twitter news, complete the article snippet given by selecting  appropriate choices in the blank.</span>
+                      
+                    	<div class="options">
+                    		<div class="option">
+                    			<label>
+                    				<input type="radio" id="one" onclick="replace1('one')"name="english1" value="650" unchecked>
+                    				<p>Option 1 Mark 1: $650</p>
+                    			</label>
+                    		</div>
+                        	<div class="option">
+							   <label>
+							      <input type="radio" id="two" onclick="replace2('two')" name="english2" value="Twitter" unchecked>
+							      <p>Option 1 Mark 2: Twitter</p>
+							   </label>
+							 </div>
+
+							<div class="option">
+								<label>
+								   	<input type="radio" id="three" onclick="replace1('three')" name="english1" value="550" unchecked>
+								   <p>Option 2 Mark 1: $550</p>
+								</label>
+							 </div>
+
+							  <div class="option">
+							   <label>
+							      <input type="radio" id="four" onclick="replace2('four')"name="english2"  value="Google" unchecked>
+							      <p>Option 2 Mark 2: Google</p>
+							   </label>
+							 </div>
+                            
+							<div class="option">
+							   	<label>
+							     	<input type="radio" id="five" onclick="replace1('five')"name="english1" value="750" unchecked>
+							     	<p>Option 3 Mark 1: $750</p>
+							     </label>
+							</div>
+
+							 <div class="option">
+							   <label>
+							      <input type="radio" id="six" onclick="replace2('six')" name="english2" value="Facebook" unchecked>
+							      <p>Option 3 Mark 2: Facebook</p>
+							   </label>
+							 </div>
+
+                    		</div>
+                    		
+                    	</div>
+
+					
+
+					<div class="right-side">
+						<p class="question-3-text" id="question-3-text">Twitter wants more cash. The company announced two
+							 <mark id="opt1">$______</mark> million debt offerings in a filling today, each with a potential $100 increase provided that the sales are oversubscribed. Assuming full tip, including $100 million boosters <mark id="opt2">_____</mark> will raise up to $1.5 billion with the two offerings.
+						</p>
+
+					</div>
+					<div class="container-button">
+						<input type="button" onclick="load()" class="next" value="submit and next question">
+						<input type="clear" class="previous" value="clear">
+					</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+</body>
+</html>

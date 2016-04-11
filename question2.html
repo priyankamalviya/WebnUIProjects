@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv='cache-control' content='no cache'>
+		<meta http-equiv='pragma' content='no-cache'>
+		<meta http-equiv='expires' content='0'>
+
+		<link href="styles.css" rel="stylesheet">
+		<title>Question 2</title>
+<script>
+
+function load(){
+        		var queryString = window.location.search;
+        		console.log(queryString);
+        		queryString=queryString.substring(1);
+        		console.log(queryString);
+        		var totalQuantAnswered = 0;
+        		var totalQuantCorrect = 0;
+        		var totalQuantScore = 0;
+        		
+        		if(queryString!=null){
+
+                 totalQuantAnswered=totalQuantAnswered+1;
+                 var choice= queryString.split("=");
+
+                 console.log(choice[1]);
+                 if(choice[1]==="correct")
+                 {
+                 	totalQuantCorrect=totalQuantCorrect+1;
+                 	totalQuantScore=totalQuantScore+50;
+                 }
+                else{
+               		totalQuantCorrect=totalQuantCorrect +0;
+               		totalQuantScore=totalQuantScore + 0;
+                }
+
+        		}
+            var radios=document.getElementsByName("math2");
+				var answer = "";
+				for (var i=0,length=radios.length; i < length; i++) {
+					if (radios[i].checked) {
+						answer=radios[i].value;
+						break;
+					}
+				}
+        		
+              var originalurl=window.location.hostname + window.location.pathname;
+              var url = originalurl.substring(0,originalurl.length-6)+"3.html";
+        	  url=url+'?totalQuantAnswered='+totalQuantAnswered+ '&totalQuantCorrect='+totalQuantCorrect+'&totalQuantScore='+totalQuantScore+'&math2='+answer;
+        	  console.log(url);
+        	  document['questionform'].action = url;
+        	  document.getElementById('questionform').submit();
+        	}
+
+</script>
+	</head>
+	<body class="question-page">
+		<header><h1>CMPE280 Quiz</h1></header>
+		<div class="container question-1">
+			<div class="box quiz-box">
+				<div class="title-container"><h3>Question 2</h3></div>
+
+				<div class="quiz-container">
+					<form action="/" method="post" name="questionform" id="questionform" >
+					<div class="question2" >
+                    	<span class="question">Select the cosine theorem Formula</span>
+                      
+                    	<div class="options ">
+                    		<div class="option">
+									<label>
+								  		<input type="radio" id="2a" name="math2" value="correct" unchecked>
+								  		<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>cos</mi><mfenced><mrow><mi>&#945;</mi><mo>&#177;</mo><mi>&#946;</mi></mrow></mfenced><mo>&#160;</mo><mo>=</mo><mo>&#160;</mo><mi>cos</mi><mfenced><mi>&#945;</mi></mfenced><mi>cos</mi><mfenced><mi>&#946;</mi></mfenced><mo>&#160;</mo><mo>&#177;</mo><mi>sin</mi><mfenced><mi>&#945;</mi></mfenced><mi>sin</mi><mfenced><mi>&#946;</mi></mfenced></math>
+								  	</label>
+							  	</div>
+							  	<div class="option">
+							  		<label>
+								    	<input type="radio" id="2b" name="math2" value="incorrect" unchecked>
+								    	<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>sin</mi><mfenced><mrow><mi>&#945;</mi><mo>&#177;</mo><mi>&#946;</mi></mrow></mfenced><mo>&#160;</mo><mo>=</mo><mo>&#160;</mo><mi>sin</mi><mfenced><mi>&#945;</mi></mfenced><mi>cos</mi><mfenced><mi>&#946;</mi></mfenced><mo>&#160;</mo><mo>+</mo><mo>&#160;</mo><mi>cos</mi><mfenced><mi>&#945;</mi></mfenced><mi>sin</mi><mfenced><mi>&#946;</mi></mfenced></math>
+								    </label>
+
+							    </div>
+							    <div class="option">
+							    	<label>
+								      	<input type="radio" id="2c" name="math2" value="incorrect" unchecked>
+								      	<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>sin</mi><mfenced><mi>&#945;</mi></mfenced><mo>&#160;</mo><mo>+</mo><mo>&#160;</mo><mi>sin</mi><mfenced><mi>&#946;</mi></mfenced><mo>=</mo><mn>2</mn><mi>sin</mi><mfenced><mfrac bevelled="true"><mrow><mi>&#945;</mi><mo>+</mo><mi>&#946;</mi></mrow><mn>2</mn></mfrac></mfenced><mi>cos</mi><mfenced><mfrac bevelled="true"><mrow><mi>&#945;</mi><mo>-</mo><mi>&#946;</mi></mrow><mn>2</mn></mfrac></mfenced></math>
+							      </label>
+						      	</div>
+
+						      	<div class="option">
+						      		<label>
+								       	 <input type="radio" id="2d" name="math2" value="incorrect" unchecked>
+								       	 <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>sin</mi><mfenced><mi>&#945;</mi></mfenced><mo>-</mo><mi>sin</mi><mfenced><mi>&#946;</mi></mfenced><mo>=</mo><mn>2</mn><mo>&#160;</mo><mi>cos</mi><mfenced><mfrac bevelled="true"><mrow><mi>&#945;</mi><mo>+</mo><mi>&#946;</mi></mrow><mn>2</mn></mfrac></mfenced><mi>sin</mi><mfenced><mfrac bevelled="true"><mrow><mi>&#945;</mi><mo>-</mo><mi>&#946;</mi></mrow><mn>2</mn></mfrac></mfenced></math>
+								    </label>
+						        </div>
+							 </div>
+
+                    		</div>
+                    		
+                    	</div>
+					   <div class="container-button">
+						<input type="button" class="next" onclick="load()" value="submit and next question">
+						<input type="clear" class="previous" value="clear">
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

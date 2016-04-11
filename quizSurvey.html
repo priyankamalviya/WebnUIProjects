@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+	<link href="styles.css" rel="stylesheet" type="text/css">
+	<title>CMPE 280 Exam Assignment </title>
+  <script>
+    function load(){
+              var queryString = window.location.search;
+              console.log(queryString);
+              queryString=queryString.substring(1);
+              console.log(queryString);
+              var totalVideoAnswered = 0;
+              var totalVideoCorrect = 0;
+              var totalVideoScore = 0;
+              if(queryString!=null){
+
+                 totalVideoAnswered=+totalVideoAnswered+1;
+                 var choice= queryString.split("=");
+                 console.log(totalVideoAnswered);
+                 console.log(choice[8]);
+                 if(choice[8]==="correct")
+                 {
+                  totalVideoCorrect=+totalVideoCorrect+1;
+                  totalVideoScore=+totalVideoScore+50;
+                  console.log(totalVideoCorrect);
+                  console.log(totalVideoScore);
+                 }
+                else{
+                  totalVideoCorrect=+totalVideoCorrect +0;
+                  totalVideoScore=+totalVideoScore + 0;
+                }
+
+            }
+
+          var originalurl=window.location.hostname + window.location.pathname;
+              console.log(queryString);
+              var url = originalurl.substring(0,originalurl.length-15)+"quizResult.html";
+            url=url+'?'+queryString+'&totalVideoAnswered='+totalVideoAnswered+ '&totalVideoCorrect='+totalVideoCorrect+'&totalVideoScore='+totalVideoScore;
+            console.log(url);
+            document['questionform'].action = url;
+            document.getElementById('questionform').submit();
+          }
+</script>
+</head>
+<body class="question-page">
+		<header><h1>CMPE280 Quiz</h1></header>
+		<div class="container">
+         <div class="box survey">
+         	<div class="title-container">
+         		<h3>Survey</h3>
+         	</div>
+         		<div class="survey-container">
+              <form action="/" method="post" id="questionform" name="questionform">
+         			<span class="question">How did you like the center?</span>
+         			<div class="survey-comment">
+         				<label>Comments:</label>
+         				<textarea class="textarea"></textarea>
+         			</div>
+         			<br>
+         			<span class="question">Select Test Area Location:</span>
+         			<div class="city">
+                       <input list="cities" class="datalist" placeholder="city" name="city">
+                       <datalist id="cities">
+                       	<option value="San Mateo">
+                       	<option value="San Francisco">
+                       	<option value="Orlando">
+                       	<option value="Texas">
+                       	<option value="New York">
+                       </datalist>
+         				<div>
+         		</div>
+         </div>
+                  	<div class="room">
+                       <input list="rooms" class="datalist" placeholder="room" name="room">
+                       <datalist id="rooms">
+                       	<option value="Room 101">
+                       	<option value="Room 301">
+                       	<option value="Room 222">
+                       	<option value="Room 510">
+                       	<option value="Room 980">
+                       </datalist>
+         				<div>
+         		</div>
+         </div>
+         <div class="container-button">
+					<input type="button" class="next" onclick="load()" value="submit and next question">
+          <input type="clear" class="previous" value="clear">
+					</div>
+        </form>
+   </div>
+</body>
+</html>
